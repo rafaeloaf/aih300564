@@ -49,7 +49,7 @@ if st.button("Gerar Relatório PDF"):
         canva_texto.drawString(38, 227, f"{nomeMedico}")
         canva_texto.drawString(300, 227, f"{data}")
         canva_texto.drawString(302, 250, f"{cpfMedico}")        
-        canva_texto.drawString(300, 325, f"{CRM_Medico}")
+        canva_texto.drawString(300, 325, f"{CRMMedico}")
         
         canva_texto.save()
         packet.seek(0)
@@ -77,7 +77,7 @@ if st.button("Gerar Relatório PDF"):
         st.success("🎉 PDF gerado com sucesso!")
         
         # 5. Botão oficial de Download do Streamlit
-        nome_saida = f"Relatorio_{nome.replace(' ', '_')}.pdf"
+        nome_saida = f"Relatorio_{nomePaciente.replace(' ', '_')}.pdf"
         st.download_button(
             label="⬇️ Clique aqui para baixar o PDF",
             data=pdf_em_memoria,
