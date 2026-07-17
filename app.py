@@ -29,6 +29,7 @@ if st.button("Gerar Relatório PDF"):
         # "Carimbando" os textos nas coordenadas X e Y da página (em pontos)
         canva_texto.drawString(100, 600, f"{nome}")
         canva_texto.drawString(100, 550, f"Data: {data}")
+        canva_texto.drawString(100, 550, f"Data: {observacoes}")
         canva_texto.drawString(100, 100, f"o 100-100")
         canva_texto.drawString(100, 200, f"o 100-200")
         canva_texto.drawString(200, 200, f"o 200-200")
