@@ -21,7 +21,7 @@ nomeMedico = st.text_area("Nome do Médico solicitante:")
 
 # Usamos uma string para evitar problemas de formatação de data
 data = st.date_input("Data da Solicitação:")
-CRM_Medico = st.text_input("CRM:")
+CRMMedico = st.text_input("CRM:")
 
 if st.button("Gerar Relatório PDF"):
     
