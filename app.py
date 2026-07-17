@@ -45,10 +45,10 @@ if st.button("Gerar Relatório PDF"):
         canva_texto.drawString(38, 318, f"{diagInicial}")
         canva_texto.drawString(273, 318, f"{cid}")
         canva_texto.drawString(350, 318, f"{cidSecundario}")
-        canva_texto.drawString(38, 282, f"{procedimento}")
+        canva_texto.drawString(38, 279, f"{procedimento}")
         canva_texto.drawString(38, 227, f"{nomeMedico}")
         canva_texto.drawString(300, 227, f"{data}")
-        canva_texto.drawString(302, 250, f"{cpfMedico}")        
+        canva_texto.drawString(320, 250, f"{cpfMedico}")        
         canva_texto.drawString(350, 227, f"{CRMMedico}")
         
         canva_texto.save()
