@@ -5,18 +5,28 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
 # 1. Configuração da Interface Gráfica (Streamlit)
-st.title("Gerador de Relatórios (PDF Estático)")
 st.subheader("Preencha os dados abaixo:")
 
-nome = st.text_input("Nome Completo:")
+nomePaciente = st.text_input("Nome Completo:")
+municipioUF = st.text_input("Município - UF:")
+sintomasClin = st.text_input("Principais sintomas clínicos:")
+justificativa = st.text_area("Condições que justificam a internação:")
+exames = st.text_area("Resultados de exames realizados:")
+diagInicial = st.text_area("Diagnóstico inicial:")
+cid = st.text_area("CID:")
+cidSecundario = st.text_area("CID secundário (se existir):")
+procedimento = st.text_area("Descrição do procedimento:")
+cpfMedico = st.text_area("CPF Médico:")
+nomeMedico = st.text_area("Nome do Médico solicitante:")
+
 # Usamos uma string para evitar problemas de formatação de data
-data = st.date_input("Data do Relatório:")
-observacoes = st.text_area("Observações:")
+data = st.date_input("Data da Solicitação:")
+CRM_Medico = st.date_input("CRM:")
 
 if st.button("Gerar Relatório PDF"):
     
     # Validação simples para garantir que o nome foi preenchido antes de gerar
-    if not nome:
+    if not nomePaciente:
         st.warning("Por favor, preencha o campo 'Nome Completo' antes de gerar.")
     else:
         # 2. Criar um "PDF temporário" na memória apenas com os textos digitados
@@ -27,19 +37,20 @@ if st.button("Gerar Relatório PDF"):
         canva_texto.setFont("Helvetica", 9)
         
         # "Carimbando" os textos nas coordenadas X e Y da página (em pontos)
-        canva_texto.drawString(38, 679, f"{nome}")
-        canva_texto.drawString(38, 530, f"Data: {data}")
+        canva_texto.drawString(38, 679, f"{nomePaciente}")
         canva_texto.drawString(100, 550, f"Data: {observacoes}")
-        canva_texto.drawString(100, 100, f"o 100-100")
-        canva_texto.drawString(100, 200, f"o 100-200")
-        canva_texto.drawString(200, 200, f"o 200-200")
-        canva_texto.drawString(300, 300, f"o 300-300")
-        canva_texto.drawString(300, 400, f"o 300-400")
-        canva_texto.drawString(400, 400, f"o 400-400")
-        canva_texto.drawString(500, 500, f"o 500-500")
-        canva_texto.drawString(550, 550, f"o 550-550")
-        canva_texto.drawString(550, 600, f"o 550-600")
-        canva_texto.drawString(550, 700, f"o 550-700")
+        canva_texto.drawString(100, 100, f"Data: {municipioUF}")
+        canva_texto.drawString(100, 100, f"Data: {sintomasClin}")
+        canva_texto.drawString(100, 100, f"Data: {justificativa}")
+        canva_texto.drawString(100, 100, f"Data: {exames}")
+        canva_texto.drawString(100, 100, f"Data: {diagInicial}")
+        canva_texto.drawString(100, 100, f"Data: {cid}")
+        canva_texto.drawString(100, 100, f"Data: {cidSecundario}")
+        canva_texto.drawString(100, 100, f"Data: {procedimento}")
+        canva_texto.drawString(100, 100, f"Data: {cpfMedico}")
+        canva_texto.drawString(100, 100, f"Data: {nomeMedico}")
+        canva_texto.drawString(38, 530, f"Data: {data}")
+        canva_texto.drawString(100, 100, f"Data: {CRM_Medico}")
         
         canva_texto.save()
         packet.seek(0)
