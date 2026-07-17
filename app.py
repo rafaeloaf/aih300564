@@ -20,7 +20,7 @@ cpfMedico = st.text_area("CPF Médico:")
 nomeMedico = st.text_area("Nome do Médico solicitante:")
 
 # Usamos uma string para evitar problemas de formatação de data
-data = st.date_input("Data da Solicitação:")
+data = st.date_input("Data da Solicitação:", format="DD-MM-YYYY")
 CRMMedico = st.text_input("CRM:")
 
 if st.button("Gerar Relatório PDF"):
