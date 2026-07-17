@@ -1,11 +1,15 @@
 import io
 import streamlit as st
 from pypdf import PdfReader, PdfWriter
+from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
 # 1. Configuração da Interface Gráfica (Streamlit)
 st.subheader("Preencha os dados abaixo:")
+
+# Cor Azul
+canva_texto.setFillColor(colors.blue)
 
 nomePaciente = st.text_input("Nome Completo:")
 municipioUF = st.text_input("Município - UF:")
@@ -47,7 +51,7 @@ if st.button("Gerar Relatório PDF"):
         canva_texto.drawString(370, 318, f"{cidSecundario}")
         canva_texto.drawString(38, 275, f"{procedimento}")
         canva_texto.drawString(38, 227, f"{nomeMedico}")
-        canva_texto.drawString(300, 227, f"{data.strftime("%d-%m-%Y")}")
+        canva_texto.drawString(300, 227, f"{data.strftime("%d    %m    %Y")}")
         canva_texto.drawString(340, 250, f"{cpfMedico}")        
         canva_texto.drawString(385, 227, f"{CRMMedico}")
         
