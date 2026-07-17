@@ -24,11 +24,11 @@ if st.button("Gerar Relatório PDF"):
         canva_texto = canvas.Canvas(packet, pagesize=letter)
         
         # Definindo a fonte e o tamanho do texto
-        canva_texto.setFont("Helvetica", 10)
+        canva_texto.setFont("Helvetica", 9)
         
         # "Carimbando" os textos nas coordenadas X e Y da página (em pontos)
-        canva_texto.drawString(40, 678, f"{nome}")
-        canva_texto.drawString(40, 530, f"Data: {data}")
+        canva_texto.drawString(38, 679, f"{nome}")
+        canva_texto.drawString(38, 530, f"Data: {data}")
         canva_texto.drawString(100, 550, f"Data: {observacoes}")
         canva_texto.drawString(100, 100, f"o 100-100")
         canva_texto.drawString(100, 200, f"o 100-200")
