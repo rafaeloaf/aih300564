@@ -8,9 +8,6 @@ from reportlab.pdfgen import canvas
 # 1. Configuração da Interface Gráfica (Streamlit)
 st.subheader("Preencha os dados abaixo:")
 
-# Cor Azul
-canva_texto.setFillColor(colors.blue)
-
 nomePaciente = st.text_input("Nome Completo:")
 municipioUF = st.text_input("Município - UF:")
 sintomasClin = st.text_input("Principais sintomas clínicos:")
@@ -39,6 +36,8 @@ if st.button("Gerar Relatório PDF"):
         
         # Definindo a fonte e o tamanho do texto
         canva_texto.setFont("Helvetica", 9)
+        # Cor Azul
+        canva_texto.setFillColor(colors.blue)
         
         # "Carimbando" os textos nas coordenadas X e Y da página (em pontos)
         canva_texto.drawString(38, 679, f"{nomePaciente}")
