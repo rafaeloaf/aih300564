@@ -29,14 +29,23 @@ if st.button("Gerar Relatório PDF"):
         # "Carimbando" os textos nas coordenadas X e Y da página (em pontos)
         canva_texto.drawString(100, 600, f"{nome}")
         canva_texto.drawString(100, 550, f"Data: {data}")
-        canva_texto.drawString(100, 500, f"Obs: {observacoes}")
+        canva_texto.drawString(100, 100, f"o 100-100")
+        canva_texto.drawString(100, 200, f"o 100-200")
+        canva_texto.drawString(200, 200, f"o 200-200")
+        canva_texto.drawString(300, 300, f"o 300-300")
+        canva_texto.drawString(300, 400, f"o 300-400")
+        canva_texto.drawString(400, 400, f"o 400-400")
+        canva_texto.drawString(500, 500, f"o 500-500")
+        canva_texto.drawString(550, 550, f"o 550-550")
+        canva_texto.drawString(550, 600, f"o 550-600")
+        canva_texto.drawString(550, 700, f"o 550-700")
         
         canva_texto.save()
         packet.seek(0)
         
         # 3. Ler o texto criado e o seu PDF Modelo original
         pdf_texto = PdfReader(packet)
-        pdf_modelo = PdfReader("seu_modelo.pdf") # Substitua pelo nome do seu arquivo
+        pdf_modelo = PdfReader("AIH_base.pdf") # Substitua pelo nome do seu arquivo
         
         pdf_final = PdfWriter()
         
